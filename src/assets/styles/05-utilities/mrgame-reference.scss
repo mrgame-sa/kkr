@@ -1,0 +1,635 @@
+
+/* =========================================================
+   Mr Game — K5Store-inspired dark gaming skin
+   Designed to closely match the supplied mobile reference.
+   ========================================================= */
+
+:root {
+  /* Defaults match the k5store.pro reference. They are overridden at runtime
+     from the theme settings (see layouts/master.twig) so the merchant can
+     change every colour from the Salla theme customizer. */
+  --mr-bg: #272525;
+  --mr-bg-2: #1d1b1b;
+  --mr-card: #1d1b1b;
+  --mr-card-2: #2c2a2a;
+  --mr-green: #0c6600;
+  --mr-green-bright: var(--mr-green);
+  --mr-white: #ffffff;
+  --mr-muted: #bcbcbc;
+  --mr-red: #f87171;
+  --mr-badge: #e70202;
+  --mr-wa: #22c55e;
+  --mr-border: color-mix(in srgb, var(--mr-green) 65%, black);
+  --mr-footer: color-mix(in srgb, var(--mr-bg) 70%, black);
+  --mr-input: color-mix(in srgb, var(--mr-card) 82%, white);
+  --mr-radius: 12px;
+}
+
+html, body {
+  background: var(--mr-bg) !important;
+  color: var(--mr-white);
+}
+
+body.theme-raed {
+  background: var(--mr-bg) !important;
+  color: var(--mr-white);
+}
+
+body.theme-raed .app-inner,
+body.theme-raed main,
+body.theme-raed .s-blocks-wrapper {
+  background: var(--mr-bg);
+}
+
+body.theme-raed a { color: inherit; }
+
+/* Header */
+.store-header,
+.top-navbar,
+.main-nav-container,
+.main-nav-container .inner {
+  background: var(--mr-bg) !important;
+  color: var(--mr-white);
+}
+
+.top-navbar {
+  display: none !important;
+}
+
+.main-nav-container {
+  min-height: 76px !important;
+  height: 76px;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+}
+
+.main-nav-container .container {
+  height: 100%;
+}
+
+.main-nav-container .container > .flex {
+  height: 100%;
+}
+
+.navbar-brand img {
+  max-height: 58px !important;
+  max-width: 135px !important;
+}
+
+.main-nav-container .sicon-menu {
+  color: var(--mr-green-bright) !important;
+}
+
+.header-btn__icon {
+  border: 0 !important;
+  color: var(--mr-white) !important;
+  background: transparent !important;
+}
+
+.s-cart-summary-total {
+  color: var(--mr-white) !important;
+}
+
+.s-cart-summary-count {
+  background: var(--mr-green) !important;
+  color: #fff !important;
+}
+
+salla-user-menu,
+salla-cart-summary {
+  color: var(--mr-white) !important;
+}
+
+/* Mobile header: logo centered like the reference */
+@media (max-width: 1024px) {
+  .main-nav-container .container > .flex {
+    position: relative;
+  }
+
+  .main-nav-container .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 !important;
+    top: 50%;
+    translate: 0 -50%;
+  }
+
+  .main-nav-container .navbar-brand img {
+    max-height: 58px !important;
+    max-width: 110px !important;
+  }
+
+  .main-nav-container .flex.items-stretch.justify-between > div:last-child {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* Desktop navigation */
+@media (min-width: 1025px) {
+  .main-nav-container {
+    min-height: 88px !important;
+    height: 88px;
+  }
+
+  .main-menu > li > a {
+    color: #eee !important;
+  }
+
+  .main-menu > li > a:hover,
+  .main-menu > li.is-active > a {
+    color: var(--mr-green-bright) !important;
+  }
+}
+
+/* Main menu / drawer */
+.menu-item {
+  color: #eee !important;
+  background: transparent !important;
+}
+
+.menu-item.is-active,
+.menu-item:hover {
+  color: var(--mr-green-bright) !important;
+  background: color-mix(in srgb, var(--mr-green) 8%, transparent) !important;
+}
+
+/* Home section titles */
+.s-block__title {
+  color: var(--mr-white) !important;
+}
+
+.s-block__title h2,
+.s-slider-block__title h2,
+.s-block--categories .s-block--categories__title {
+  color: var(--mr-green-bright) !important;
+  font-weight: 800 !important;
+}
+
+.s-block__title .right-side h2 {
+  color: var(--mr-green-bright) !important;
+}
+
+.s-block {
+  margin-top: 26px !important;
+}
+
+@media (max-width: 640px) {
+  .s-block {
+    margin-top: 22px !important;
+  }
+
+  .s-block__title {
+    margin-bottom: 14px !important;
+  }
+}
+
+/* Slider/banner */
+.s-slider-block,
+.s-slider-block__display-all,
+.swiper,
+.swiper-slide {
+  border-radius: var(--mr-radius);
+  overflow: hidden;
+}
+
+.s-slider-block {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.s-slider-block img {
+  border-radius: var(--mr-radius);
+}
+
+.s-slider-block .swiper-button-next,
+.s-slider-block .swiper-button-prev {
+  color: var(--mr-green-bright) !important;
+}
+
+/* Product grids — two cards on phones like the reference */
+custom-salla-product-card {
+  display: block;
+  min-width: 0;
+}
+
+.s-product-card-entry {
+  background: var(--mr-card) !important;
+  color: var(--mr-white) !important;
+  border: 2px solid var(--mr-border);
+  border-radius: var(--mr-radius) !important;
+  overflow: hidden;
+  box-shadow: none !important;
+  min-width: 0;
+}
+
+.s-product-card-entry:hover {
+  border-color: var(--mr-green-bright);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--mr-green) 22%, transparent), 0 8px 28px rgba(0,0,0,.35) !important;
+}
+
+.s-product-card-image {
+  background: #000 !important;
+}
+
+.s-product-card-image img {
+  transition: transform .35s ease, opacity .3s ease;
+}
+
+.s-product-card-entry:hover .s-product-card-image img {
+  transform: scale(1.025);
+}
+
+.s-product-card-content {
+  background: var(--mr-card) !important;
+  padding: 11px !important;
+}
+
+.s-product-card-content-title a {
+  color: #fff !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+}
+
+.s-product-card-content-title a:hover {
+  color: var(--mr-green-bright) !important;
+}
+
+.s-product-card-content-subtitle {
+  color: #c8c8c8 !important;
+}
+
+.s-product-card-sale-price h4,
+.s-product-card-starting-price h4 {
+  color: var(--mr-red) !important;
+  font-weight: 800 !important;
+}
+
+.s-product-card-sale-price span {
+  color: #858585 !important;
+}
+
+.s-product-card-price {
+  color: var(--mr-green-bright) !important;
+}
+
+.s-product-card-rating {
+  color: #ddd !important;
+}
+
+.s-product-card-rating span svg {
+  fill: #ffd21c !important;
+}
+
+.s-product-card-promotion-title {
+  background: var(--mr-badge) !important;
+  color: #fff !important;
+  border-radius: 0 0 0 10px !important;
+  top: 0 !important;
+  font-size: 12px !important;
+  padding: 7px 9px !important;
+}
+
+.s-product-card-content-footer {
+  margin-top: 8px !important;
+}
+
+.s-product-card-content-footer salla-add-product-button {
+  --salla-button-color: var(--mr-green);
+}
+
+.s-product-card-content-footer salla-add-product-button::part(button),
+.s-product-card-content-footer salla-add-product-button button {
+  border-color: var(--mr-green) !important;
+  color: #fff !important;
+  background: transparent !important;
+  border-radius: 10px !important;
+}
+
+.s-product-card-content-footer salla-add-product-button::part(button):hover,
+.s-product-card-content-footer salla-add-product-button button:hover {
+  background: var(--mr-green) !important;
+}
+
+.s-product-card-wishlist-btn button {
+  background: rgba(0,0,0,.45) !important;
+  color: #fff !important;
+}
+
+/* Make Salla product-list components use a compact two-column grid on mobile */
+salla-products-list {
+  --columns: 2;
+}
+
+@media (max-width: 640px) {
+  salla-products-list {
+    display: block;
+  }
+
+  salla-products-list .s-products-list-container,
+  .s-products-list-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .s-product-card-content {
+    padding: 9px !important;
+  }
+
+  .s-product-card-content-title a {
+    font-size: 13px !important;
+  }
+
+  .s-product-card-content-subtitle {
+    font-size: 12px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .s-product-card-sale-price h4,
+  .s-product-card-price {
+    font-size: 14px !important;
+  }
+
+  .s-product-card-content-footer salla-add-product-button {
+    width: 100% !important;
+  }
+
+  .s-product-card-content-footer salla-add-product-button::part(button) {
+    min-height: 38px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Tabs */
+.s-block--special-products .tab-trigger,
+.s-block--tabs-produtcs .tab-trigger {
+  color: #fff !important;
+}
+
+.s-block--special-products .tab-trigger.is-active button,
+.s-block--tabs-produtcs .tab-trigger.is-active button {
+  color: var(--mr-green-bright) !important;
+  border-color: var(--mr-green) !important;
+  background: transparent !important;
+}
+
+/* Category / banner tiles */
+.slide--cat-entry,
+.slide--offer-entry,
+.s-block--features__item {
+  background: var(--mr-card) !important;
+  border-color: color-mix(in srgb, var(--mr-green) 35%, transparent) !important;
+  color: #fff !important;
+}
+
+.slide--cat-entry h2,
+.s-block--features__item h2 {
+  color: #fff !important;
+}
+
+.slide--cat-entry i,
+.s-block--features__item .feature-icon i {
+  color: var(--mr-green-bright) !important;
+}
+
+.s-block--features__item .feature-icon {
+  background: color-mix(in srgb, var(--mr-green) 14%, transparent) !important;
+}
+
+/* Footer */
+footer,
+footer .footer-is-dark {
+  background: var(--mr-footer) !important;
+  color: #ddd !important;
+  border-top: 1px solid color-mix(in srgb, var(--mr-green) 25%, transparent);
+}
+
+footer h3 {
+  color: var(--mr-green-bright) !important;
+}
+
+/* Forms / search / generic Salla cards */
+.s-search-input,
+.s-form-control,
+select,
+textarea,
+input {
+  background: var(--mr-input) !important;
+  color: #fff !important;
+  border-color: #444 !important;
+}
+
+.s-search-input::placeholder,
+input::placeholder,
+textarea::placeholder {
+  color: #aaa !important;
+}
+
+/* WhatsApp floating button */
+.mrgame-whatsapp {
+  position: fixed;
+  z-index: 80;
+  width: 58px;
+  height: 58px;
+  right: 14px;
+  bottom: 82px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--mr-wa);
+  color: #fff !important;
+  box-shadow: 0 5px 18px rgba(0,0,0,.35);
+  font-size: 31px;
+}
+
+.mrgame-whatsapp:hover {
+  transform: scale(1.04);
+}
+
+@media (min-width: 1025px) {
+  .mrgame-whatsapp {
+    bottom: 25px;
+  }
+}
+
+/* Mobile bottom navigation — reference style */
+.mrgame-mobile-nav {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  body {
+    padding-bottom: 70px;
+  }
+
+  .mrgame-mobile-nav {
+    position: fixed;
+    z-index: 75;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    height: 64px;
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--mr-card-2) 96%, transparent);
+    border: 1px solid rgba(255,255,255,.07);
+    box-shadow: 0 8px 30px rgba(0,0,0,.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+  }
+
+  .mrgame-mobile-nav a,
+  .mrgame-mobile-nav button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer;
+  }
+
+  .mrgame-mobile-nav i {
+    font-size: 25px;
+    line-height: 1;
+  }
+
+  .mrgame-mobile-nav a:hover,
+  .mrgame-mobile-nav button:hover,
+  .mrgame-mobile-nav a.is-active {
+    color: var(--mr-green-bright);
+  }
+
+  .mrgame-mobile-nav .mr-cart-badge {
+    position: absolute;
+    top: 5px;
+    right: 19%;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    border-radius: 99px;
+    background: var(--mr-green);
+    color: #fff;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Keep content from touching screen edges on small phones */
+@media (max-width: 640px) {
+  main .container,
+  .s-block.container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .s-slider-block {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+
+/* =========================================================
+   Mr Game v2 — reference fidelity + colour-customisable
+   ========================================================= */
+
+/* Product card: rating pill + view button sit on the image like the reference */
+.s-product-card-image { position: relative; }
+.s-product-card-rating { display: none !important; }
+
+.mr-card-rating {
+  position: absolute;
+  inset-inline-end: 8px;
+  bottom: 8px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 99px;
+  background: rgba(0, 0, 0, .55);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.mr-card-rating i { color: #ffd21c; font-size: 15px; }
+
+.mr-card-eye {
+  position: absolute;
+  inset-inline-start: 8px;
+  bottom: 8px;
+  z-index: 3;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .55);
+  color: #fff !important;
+}
+
+.mr-card-eye svg { width: 20px; height: 20px; }
+
+/* Centered section titles (reference) */
+.s-block__title {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.s-block__title .right-side,
+.s-block__title .left-side {
+  width: 100%;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.s-block__title h2 {
+  font-size: clamp(1.55rem, 6.2vw, 2.1rem);
+  line-height: 1.3;
+}
+
+.s-block__title p,
+.s-block__title a {
+  color: var(--mr-white) !important;
+  font-size: 1.1rem;
+  opacity: 1 !important;
+}
+
+/* Mobile bottom nav: cart badge over the icon + live total */
+@media (max-width: 1024px) {
+  .mrgame-mobile-nav a,
+  .mrgame-mobile-nav button { position: relative; }
+
+  .mrgame-mobile-nav .mr-cart-badge {
+    right: auto;
+    left: auto;
+    inset-inline-start: calc(50% - 21px);
+    top: 6px;
+  }
+
+  .mrgame-mobile-nav .mr-nav-total { font-size: 11px; white-space: nowrap; }
+
+  .mrgame-mobile-nav a.is-active { color: var(--mr-white); }
+}
