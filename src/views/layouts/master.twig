@@ -110,6 +110,14 @@
             --mr-white: {{ mr_text }};
             --mr-red: {{ mr_price }};
             --mr-badge: {{ mr_badge }};
+            /* the store brand colour is replaced by the theme accent, so every page
+               (links, buttons, headers, gradients) uses the same colour */
+            --color-primary: {{ mr_accent }};
+            --color-primary-dark: color-mix(in srgb, {{ mr_accent }} 85%, black);
+            --color-primary-light: color-mix(in srgb, {{ mr_accent }} 85%, white);
+            --color-primary-d: color-mix(in srgb, {{ mr_accent }} 85%, black);
+            --color-primary-l: color-mix(in srgb, {{ mr_accent }} 85%, white);
+            --color-primary-reverse: #ffffff;
         }
     </style>
     {# tracking services, custom css feature. #}

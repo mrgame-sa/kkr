@@ -648,3 +648,75 @@ textarea::placeholder {
 
   .mrgame-mobile-nav a.is-active { color: var(--mr-white); }
 }
+
+
+/* =========================================================
+   Mr Game v3 — one consistent look on EVERY page
+   (product, cart, blog, account, thank-you, brands).
+   The base Raed templates use light Tailwind classes
+   (bg-white, text-gray-*) which are mapped here to the
+   colour variables, so changing the colours in the theme
+   settings changes all pages together.
+   ========================================================= */
+body.theme-raed .bg-white,
+body.theme-raed .lg\:bg-white,
+body.theme-raed .sticky-product-bar,
+body.theme-raed .s-modal-body,
+body.theme-raed .s-modal-header,
+body.theme-raed .s-user-menu-dropdown-menu,
+body.theme-raed .s-search-results {
+  background-color: var(--mr-card);
+  color: var(--mr-white);
+}
+
+body.theme-raed .bg-gray-50,
+body.theme-raed .bg-gray-100,
+body.theme-raed .bg-border-color {
+  background-color: var(--mr-card-2);
+}
+
+body.theme-raed .text-black,
+body.theme-raed .text-dark,
+body.theme-raed .text-gray-600,
+body.theme-raed .text-gray-700,
+body.theme-raed .text-gray-800,
+body.theme-raed .text-gray-900,
+body.theme-raed .s-quantity-input-input,
+body.theme-raed .s-comments-product-title,
+body.theme-raed .s-product-options-option-label {
+  color: var(--mr-white);
+}
+
+body.theme-raed .text-gray-400,
+body.theme-raed .text-gray-500 {
+  color: var(--mr-muted);
+}
+
+body.theme-raed .text-red-800 {
+  color: var(--mr-red);
+}
+
+body.theme-raed .border-gray-100,
+body.theme-raed .border-gray-200,
+body.theme-raed .border-gray-300,
+body.theme-raed .even\:border-gray-200 {
+  border-color: color-mix(in srgb, var(--mr-white) 14%, transparent);
+}
+
+body.theme-raed .shadow-default,
+body.theme-raed .shadow-sm {
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--mr-white) 6%, transparent);
+}
+
+/* Account pages header strip follows the accent colour */
+body.theme-raed .profile-header.gradient-bg,
+body.theme-raed .rating-header.gradient-bg {
+  background-image: linear-gradient(to right, var(--mr-green), color-mix(in srgb, var(--mr-green) 70%, black));
+  color: #fff;
+}
+
+body.theme-raed .gradient-bg.profile-header .breadcrumbs a,
+body.theme-raed .gradient-bg.profile-header .breadcrumbs span,
+body.theme-raed .gradient-bg.profile-header .breadcrumbs .arrow {
+  color: #fff;
+}
