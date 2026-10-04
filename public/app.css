@@ -720,3 +720,53 @@ body.theme-raed .gradient-bg.profile-header .breadcrumbs span,
 body.theme-raed .gradient-bg.profile-header .breadcrumbs .arrow {
   color: #fff;
 }
+
+
+/* =========================================================
+   Mr Game v4 — safety net: catch every light utility class
+   (including responsive/hover variants used by Salla components)
+   so no page, popup or component can stay white.
+   ========================================================= */
+html { color-scheme: dark; }
+
+body.theme-raed [class~="bg-white"],
+body.theme-raed [class~="bg-white/90"],
+body.theme-raed [class*=":bg-white"],
+body.theme-raed [class~="bg-gray-50"],
+body.theme-raed [class~="bg-gray-100"],
+body.theme-raed [class~="bg-gray-200"],
+body.theme-raed .s-product-options-option-container,
+body.theme-raed .s-quantity-input-container,
+body.theme-raed .s-tabs-wrapper,
+body.theme-raed .s-comments-product-form,
+body.theme-raed .s-rating-modal-wrapper {
+  background-color: var(--mr-card);
+  color: var(--mr-white);
+}
+
+body.theme-raed [class~="text-gray-300"],
+body.theme-raed [class~="text-gray-400"],
+body.theme-raed [class~="text-gray-500"] { color: var(--mr-muted); }
+
+body.theme-raed [class~="text-gray-600"],
+body.theme-raed [class~="text-gray-700"],
+body.theme-raed [class~="text-gray-800"],
+body.theme-raed [class~="text-gray-900"],
+body.theme-raed [class~="text-black"] { color: var(--mr-white); }
+
+body.theme-raed input,
+body.theme-raed select,
+body.theme-raed textarea {
+  background-color: var(--mr-input);
+  color: var(--mr-white);
+  border-color: color-mix(in srgb, var(--mr-white) 18%, transparent);
+}
+
+body.theme-raed ::placeholder { color: var(--mr-muted); opacity: .8; }
+
+/* Page headers / breadcrumbs / titles on inner pages */
+body.theme-raed .breadcrumbs a,
+body.theme-raed .breadcrumbs span,
+body.theme-raed .page-title,
+body.theme-raed .main-content h1,
+body.theme-raed .main-content h2 { color: var(--mr-white); }
